@@ -2,6 +2,7 @@
 // Do any local configuration here
 //
 
+<<<<<<< HEAD
 /*Zona hacia adelante*/
 zone "empresa.local" {
 type master;
@@ -15,6 +16,23 @@ file "/etc/bind/db.192";
 allow-transfer { 192.168.50.2; };
 };
 
+=======
+// Zona directa de empresa.local
+zone "empresa.local" {
+    type slave;
+    file "/var/cache/bind/db.empresa.local";
+    masters { 192.168.50.3; };
+};
+
+// Zona inversa
+zone "50.168.192.in-addr.arpa" {
+    type slave;
+    file "/var/cache/bind/db.192";
+    masters { 192.168.50.3; };
+};
+
+
+>>>>>>> 2c41d2d (Subiendo archivos al repo)
 // Consider adding the 1918 zones here, if they are not used in your
 // organization
 //include "/etc/bind/zones.rfc1918";
