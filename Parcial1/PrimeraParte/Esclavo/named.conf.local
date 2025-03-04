@@ -1,0 +1,23 @@
+//
+// Do any local configuration here
+//
+
+// Zona directa de empresa.local
+zone "empresa.local" {
+    type slave;
+    file "/var/cache/bind/db.empresa.local";
+    masters { 192.168.50.3; };
+};
+
+// Zona inversa
+zone "50.168.192.in-addr.arpa" {
+    type slave;
+    file "/var/cache/bind/db.192";
+    masters { 192.168.50.3; };
+};
+
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
