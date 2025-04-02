@@ -1,0 +1,8 @@
+[vsftpd]
+enabled = true
+port = ftp
+filter = vsftpd
+logpath = /var/log/vsftpd.log
+maxretry = 5
+findtime = 120
+bantime = 600
